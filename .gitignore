@@ -1,0 +1,8 @@
+# Python Related Items
+__pycache__/
+*.pyc
+venv/
+
+# MacOS Tax
+.DS_Store
+# Environment Variables
