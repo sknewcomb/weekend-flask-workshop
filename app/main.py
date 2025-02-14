@@ -1,5 +1,6 @@
 from flask import Flask, jsonify
 import os
+from datetime import datetime
 
 def create_app():
     # Create the Flask app instance
@@ -10,8 +11,13 @@ def create_app():
 
     @app.route("/")
     def index():
-        # Return a JSON response for the root endpoint
-        return jsonify(message="Welcome back to Flask on Day 2!")
+        # Get current time
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # Return a JSON response with message and current time
+        return jsonify(
+            message="Welcome back to Flask on Day 2!",
+            current_time=current_time
+        )
 
     return app
 
